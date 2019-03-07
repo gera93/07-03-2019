@@ -1,0 +1,49 @@
+var img;
+function preload(){
+  img = loadImage('goku.png');
+}
+function setup() {
+  g = new goku();
+  createCanvas(400, 400);
+}
+
+function draw() {
+  background(220);
+g.mostrar();
+  if(keyIsPressed && keyCode == RIGHT_ARROW){
+    g.derecha();
+  }
+   if(keyIsPressed && keyCode == LEFT_ARROW){
+    g.izquierda();
+   }
+     if(keyIsPressed && keyCode == UP_ARROW){
+    g.arriba();
+     }
+       if(keyIsPressed && keyCode == DOWN_ARROW){
+    g.abajo();
+    
+  }
+}
+-----------------------------------------------------------------------------------------------------------------------------------
+class goku{
+  constructor(){
+   this.x = width/2;
+    this.y = height/2;
+  }
+  mostrar(){
+     imageMode(CENTER);
+  image(img,this.x,this.y,400,400);
+  }
+  derecha(){
+    this.x++
+  }
+  izquierda(){
+    this.x--
+  }
+  abajo(){
+    this.y++
+  }
+  arriba(){
+  this.y--
+  }
+}
